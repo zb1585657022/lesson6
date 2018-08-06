@@ -33,6 +33,10 @@ public class GradeManager extends BaseService {
         publishEvent(new CacheEvent(this,CacheEventType.USER));
     }
 
+    public Grade getGradeByGraId(Integer graId){
+        return gradeRepository.findByGraId(graId);
+    }
+
     public Grade getGrade(Integer graId) {
         return gradeRepository.findOne(graId);
     }

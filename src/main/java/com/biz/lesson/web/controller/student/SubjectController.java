@@ -1,9 +1,7 @@
 package com.biz.lesson.web.controller.student;
 
-import com.biz.lesson.business.stu.GradeManager;
 import com.biz.lesson.business.stu.SubjectManager;
 import com.biz.lesson.exception.BusinessAsserts;
-import com.biz.lesson.model.student.Grade;
 import com.biz.lesson.model.student.Subject;
 import com.biz.lesson.web.controller.BaseController;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -56,6 +54,7 @@ public class SubjectController extends BaseController {
 //        if(graAveMarkStr!=null&&!"".equals(graAveMarkStr)){
 //            grade.setGraNum(Integer.parseInt(request.getParameter(graAveMarkStr)));
 //        }
+        subject.setSubAveMark(0);
         subjectManager.createSubject(subject);
         return referer(request);
     }
@@ -68,7 +67,7 @@ public class SubjectController extends BaseController {
 
         modelAndView.addObject("subject", subject);
         modelAndView.addObject("cmd", "edit");
-        modelAndView.addObject("roles", subjectManager.listAllRoles());
+        modelAndView.addObject("roles", subjectManager.listEnableSubjects());
         addReferer(request);
         return modelAndView;
     }

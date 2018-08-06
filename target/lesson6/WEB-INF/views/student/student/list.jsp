@@ -53,7 +53,7 @@
                                 <spring:message code="学生管理"/>
                                 <span class=" btn-group pull-right">
                                     <sec:authorize ifAnyGranted="OPT_USER_ADD">
-                                        <a href="/student/student/add.do" ><i class="ace-icon glyphicon glyphicon-plus"></i>
+                                        <a href="${pageContext.request.contextPath}/student/student/add.do" ><i class="ace-icon glyphicon glyphicon-plus"></i>
                                             <spring:message code="button.add"/>
                                         </a>
                                     </sec:authorize>
@@ -84,16 +84,16 @@
                                             <td class="hidden-480">${student.stuGrade}</td>
                                             <td>${student.stuSubjectSize}</td>
                                             <td>${student.stuAveMark}</td>
-                                            <td>分数录入</td>
-                                            <td>选课</td>
+                                            <td><a href="${pageContext.request.contextPath}/student/student/setMark.do?stuId=${student.stuId}">分数录入</a></td>
+                                            <td><a href="${pageContext.request.contextPath}/student/student/chooseSub.do?stuId=${student.stuId}">选课</a></td>
                                             <td>
                                                 <div class="hidden-sm hidden-xs btn-group action-buttons">
-                                                    <a href="/student/student/edit.do?stuId=${student.stuId}"
+                                                    <a href="${pageContext.request.contextPath}/student/student/edit.do?stuId=${student.stuId}"
                                                        class="green">
                                                         <i class="ace-icon fa fa-pencil-square-o bigger-120"></i>
                                                     </a>
                                                     <a data-id="${mainmenu.id}"
-                                                       data-url="/student/student/stuId/delete.do?stuId=${student.stuId}"
+                                                       data-url="${pageContext.request.contextPath}/student/student/stuId/delete.do?stuId=${student.stuId}"
                                                        class="red btn-delete-modal">
                                                         <i class="ace-icon fa fa-trash-o bigger-120"></i>
                                                     </a>
@@ -111,12 +111,12 @@
                                                                 </a>
                                                             </li>
                                                             <li>
-                                                                <a href="/student/student/edit.do?stuId=${student.stuId}">
+                                                                <a href="${pageContext.request.contextPath}/student/student/edit.do?stuId=${student.stuId}">
                                                                     <span class="green"><i class="ace-icon fa fa-pencil-square-o bigger-120"></i></span>
                                                                 </a></li>
                                                             <li>
                                                                 <a data-id="${mainmenu.id}"
-                                                                   data-url="/student/student/stuId/delete.do?stuId=${student.stuId}" class="red btn-delete-modal">
+                                                                   data-url="${pageContext.request.contextPath}/student/student/stuId/delete.do?stuId=${student.stuId}" class="red btn-delete-modal">
                                                                     <span class="red"><i class="ace-icon fa fa-trash-o bigger-120"></i></span>
                                                                 </a>
                                                             </li>

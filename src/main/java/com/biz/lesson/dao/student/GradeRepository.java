@@ -18,6 +18,8 @@ public interface GradeRepository extends CommonJpaRepository<Grade,Integer> ,Gra
     @Query("DELETE from Grade g WHERE g.graId = :graId")
     void disableGrade(@Param("graId") Integer graId);
 
+    Grade findByGraId(Integer graId);
+
     Grade findByGraName(String graName);
 
     @Query(nativeQuery = true, value = "select  COUNT(DISTINCT stuid) FROM student WHERE grade_id = ?")

@@ -40,7 +40,7 @@
                 </li>
 
                 <li>
-                    <a href="/student/student/list.do">
+                    <a href="${pageContext.request.contextPath}/student/grade/list.do">
                         <spring:message code="班级管理"/>
                     </a>
                 </li>
@@ -104,7 +104,7 @@
                                 </div>
                             </div>
 
-                            <form action="student/grade/save_${cmd}.do" method="post" class="form-horizontal" role="form"
+                            <form action="${pageContext.request.contextPath}/student/grade/save_${cmd}.do" method="post" class="form-horizontal" role="form"
                                   id="admin-add-form">
                                 <input type="hidden" value="${cmd}" id="cmd"/>
                                 <input   type="hidden" id="logo" name="logo" value="${admin.logo}">

@@ -37,10 +37,6 @@ public class SubjectManager extends BaseService {
         return subjectRepository.findOne(subId);
     }
 
-    public List<Subject> listAllRoles() {
-        return subjectRepository.findAll();
-    }
-
     public void updateSubject(Subject subject) {
         subjectRepository.save(subject);
         publishEvent(new CacheEvent(this,CacheEventType.USER));
@@ -50,6 +46,7 @@ public class SubjectManager extends BaseService {
         subjectRepository.disableSubject(subject.getSubId());
         publishEvent(new CacheEvent(this,CacheEventType.USER));
     }
+
 
 
 }

@@ -47,7 +47,7 @@
                                 <spring:message code="班级管理"/>
                                 <span class=" btn-group pull-right">
                                 <sec:authorize ifAnyGranted="OPT_USER_ADD">
-                                    <a href="/student/grade/add.do" ><i class="ace-icon glyphicon glyphicon-plus"></i>
+                                    <a href="${pageContext.request.contextPath}/student/grade/add.do" ><i class="ace-icon glyphicon glyphicon-plus"></i>
                                         <spring:message code="button.add"/>
                                     </a>
                                 </sec:authorize>
@@ -73,12 +73,12 @@
                                         <td>${grade.graAveMark}</td>
                                         <td class="hidden-480">
                                             <div class="hidden-sm hidden-xs btn-group action-buttons">
-                                                <a href="/student/grade/edit.do?graId=${grade.graId}"
+                                                <a href="${pageContext.request.contextPath}/student/grade/edit.do?graId=${grade.graId}"
                                                    class="green">
                                                     <i class="ace-icon fa fa-pencil-square-o bigger-120"></i>
                                                 </a>
                                                 <a data-id="${mainmenu.id}"
-                                                   data-url="/student/grade/graId/delete.do?graId=${grade.graId}"
+                                                   data-url="${pageContext.request.contextPath}/student/grade/graId/delete.do?graId=${grade.graId}"
                                                    class="red btn-delete-modal">
                                                     <i class="ace-icon fa fa-trash-o bigger-120"></i>
                                                 </a>
@@ -96,12 +96,12 @@
                                                             </a>
                                                         </li>
                                                         <li>
-                                                            <a href="/student/grade/edit.do?graId=${grade.graId}">
+                                                            <a href="${pageContext.request.contextPath}/student/grade/edit.do?graId=${grade.graId}">
                                                                 <span class="green"><i class="ace-icon fa fa-pencil-square-o bigger-120"></i></span>
                                                             </a></li>
                                                         <li>
                                                             <a data-id="${mainmenu.id}"
-                                                               data-url="/student/grade/graId/delete.do?graId=${grade.graId}" class="red btn-delete-modal">
+                                                               data-url="${pageContext.request.contextPath}/student/grade/graId/delete.do?graId=${grade.graId}" class="red btn-delete-modal">
                                                                 <span class="red"><i class="ace-icon fa fa-trash-o bigger-120"></i></span>
                                                             </a>
                                                         </li>

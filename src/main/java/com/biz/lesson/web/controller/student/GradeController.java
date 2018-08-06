@@ -28,11 +28,7 @@ public class GradeController extends BaseController {
     public ModelAndView list(HttpServletRequest request) throws Exception{
         ModelAndView modelAndView = new ModelAndView("student/grade/list");
         List<Grade> grades = gradeManager.listEnableGrades();
-        System.out.println("++++++++++++++++++++++++");
         for (Grade grade:grades){
-            System.out.println(grade.getGraId().longValue());
-            System.out.println(gradeManager.findStuNumber(grade.getGraId().longValue()));
-            System.out.println("++++++===========");
             grade.setGraNum(gradeManager.findStuNumber(grade.getGraId().longValue()));
             System.out.println(gradeManager.findStuNumber(grade.getGraId().longValue()));
             gradeManager.createGrade(grade);
@@ -69,6 +65,7 @@ public class GradeController extends BaseController {
 //            grade.setGraNum(Integer.parseInt(request.getParameter(graAveMarkStr)));
 //        }
         System.out.println(grade);
+        grade.setGraAveMark(0);
         gradeManager.createGrade(grade);
         return referer(request);
     }
